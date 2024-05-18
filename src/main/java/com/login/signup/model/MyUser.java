@@ -9,17 +9,18 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "user_tbl")
-public class User {
+public class MyUser {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	private String fnmae;
+	private String fname;
 	private String lname;
-	@Column(unique = true)
 	
+	@Column(unique = true)
 	private String username;
 	private String password;
+	private String role;
 	
 	public int getId() {
 		return id;
@@ -27,11 +28,11 @@ public class User {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getFnmae() {
-		return fnmae;
+	public String getFname() {
+		return fname;
 	}
-	public void setFnmae(String fnmae) {
-		this.fnmae = fnmae;
+	public void setFname(String fname) {
+		this.fname = fname;
 	}
 	public String getLname() {
 		return lname;
@@ -51,5 +52,12 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	public String getRole() {
+		return role;
+	}
+	public void setRole(String role) {
+		this.role = role;
+	}
+	
 	
 }
